@@ -1,0 +1,34 @@
+{
+  "name": "bigpicture-bulk-enrichment",
+  "version": "1.0.0",
+  "description": "",
+  "main": "run.js",
+  "scripts": {
+    "build": "node_modules/.bin/tsc",
+    "watch": "node_modules/.bin/tsc -w",
+    "format": "node_modules/.bin/prettier --write src/"
+  },
+  "keywords": [
+    "bigpicture",
+    "company data api",
+    "ip to company api",
+    "api"
+  ],
+  "author": "BigPicture <support@bigpicture.cio> (https://bigpicture.io/)",
+  "license": "MIT",
+  "dependencies": {
+    "bigpicture-node": "^1.0.2",
+    "bottleneck": "^2.19.5",
+    "csv-parser": "^3.0.0",
+    "csv-write-stream": "^2.0.0",
+    "debug": "^4.3.2",
+    "json2csv": "^5.0.6"
+  },
+  "devDependencies": {
+    "@types/debug": "^4.1.7",
+    "@types/json2csv": "^5.0.3",
+    "@types/node": "^16.10.1",
+    "prettier": "^2.4.1",
+    "typescript": "^4.4.3"
+  }
+}
