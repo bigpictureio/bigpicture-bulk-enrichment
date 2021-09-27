@@ -3,8 +3,10 @@ const { BulkEnricher } = require('./dist/bulk');
 
 const config = {
   API_KEY: process.env.API_KEY,
-  inputFile: "", // add input / output file names here
-  outputFile: ""
+
+  // add input / output file names here
+  inputFile: "test-input.csv",
+  outputFile: "test-output.csv"
 }
 const enricher = new BulkEnricher(config);
 

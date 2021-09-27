@@ -7,3 +7,48 @@ It's designed to handle CSV files of any size, rate limiting, and retries.
 
 ## Installation
 
+This project requires Node.js v8.x or greater.
+
+Clone the repo
+```bash
+git clone git@github.com:bigpictureio/bigpicture-bulk-enrichment.git
+```
+
+Install dependencies and build project.
+```bash
+npm install
+npm run build
+```
+
+## Usage
+
+Open `run.js` and update the config to your input and output filenames.
+
+Example:
+```js
+const config = {
+  API_KEY: process.env.API_KEY,
+
+  // add input / output file names here
+  inputFile: "INPUT_FILE_NAME.csv",
+  outputFile: "OUTPUT_FILE_NAME.csv"
+}
+const enricher = new BulkEnricher(config);
+```
+
+Your input file should be a CSV without a header and the first column being the domains you would like to enrich.
+
+Example:
+```
+uber.com
+microsoft.com
+stripe.com
+```
+
+Start the enrichment via the following command. Be sure to pass in your BigPicture API Key. If you don't have an API Key, you can sign up for a free one at https://bigpicture.io.
+```bash
+API_KEY=YOUR_API_KEY node run.js
+```
+
+## Need Help?
+You can reach out to us at support@bigpicture.io.
