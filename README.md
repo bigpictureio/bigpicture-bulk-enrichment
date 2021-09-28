@@ -22,20 +22,6 @@ npm run build
 
 ## Usage
 
-Open `run.js` and update the config to your input and output filenames.
-
-Example:
-```js
-const config = {
-  API_KEY: process.env.API_KEY,
-
-  // add input / output file names here
-  inputFile: "INPUT_FILE_NAME.csv",
-  outputFile: "OUTPUT_FILE_NAME.csv"
-}
-const enricher = new BulkEnricher(config);
-```
-
 Your input file should be a CSV without a header and the first column being the domains you would like to enrich.
 
 Example:
@@ -49,7 +35,7 @@ stripe.com
 Start the enrichment via the following command. Be sure to pass in your BigPicture API Key. 
 
 ```bash
-API_KEY=YOUR_API_KEY node run.js
+API_KEY=YOUR_API_KEY INPUT_FILE="domains.csv" node run.js
 ```
 
 If you don't have an API Key, you can sign up for a free one at https://bigpicture.io.

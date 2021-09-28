@@ -34,6 +34,7 @@ export class BulkEnricher {
 
   constructor(config: BulkEnrichConfig) {
     this._config = Object.assign({ maxConcurrent: 600 }, config);
+    this._config.outputFile = this._config.outputFile || this._buildOutputFile(this._config.inputFile);
 
     if (!this._config.API_KEY) {
       throw Error("API_KEY missing from config");
@@ -50,6 +51,14 @@ export class BulkEnricher {
 
     this.bigPicture = BigPicture(config.API_KEY);
     this.count = 0;
+  }
+
+  _buildOutputFile(inputFile: string) {
+    if (!inputFile) {
+      throw Error("inputFile missing from config");
+    }
+
+    return inputFile.replace('.csv', '-output.csv');
   }
 
   /**
